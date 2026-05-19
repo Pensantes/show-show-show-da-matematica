@@ -1,0 +1,107 @@
+O que é uma função?;uma equação qualquer,uma relação entre conjuntos,toda expressão algébrica,um número;1
+Qual gráfico representa uma função do 1º grau?;reta,parábola,círculo,hipérbole;0
+Qual é a forma geral da função do 2º grau?;ax+b,ax²+bx+c,ax³,√x;1
+O coeficiente angular indica o quê?;intercepto,inclinação,valor máximo,domínio;1
+O coeficiente linear indica o quê?;inclinação,intercepto,inclinação zero,domínio;1
+Uma função quadrática tem gráfico em forma de?;reta,parábola,círculo,elipse;1
+O vértice da parábola indica?;zero,máximo ou mínimo,domínio,raiz;1
+Discriminante serve para?;achar derivada,classificar raízes,calcular limite,integrar;1
+Se Δ > 0 então a função tem?;nenhuma raiz,duas raízes reais,uma raiz dupla,raízes complexas;1
+Domínio de uma função é?;imagem,conjunto de saída,conjunto de entrada,gráfico;2
+Imagem de uma função é?;domínio,conjunto de saída,coeficiente,gráfico;1
+Função crescente significa?;diminui,aumenta,constante,indefinida;1
+Função decrescente significa?;aumenta,diminui,constante,indefinida;1
+Uma PA é definida por?;razão constante,produto constante,soma variável,potência;0
+Uma PG é definida por?;diferença constante,razão constante,soma constante,raiz constante;1
+Logaritmo é operação inversa de?;adição,multiplicação,potenciação,divisão;2
+log10(100) é?;1,2,3,10;1
+Potência de expoente zero é?;0,1,indefinido,igual à base;1
+√16 é?;2,3,4,5;2
+Equação do 1º grau tem quantas soluções?;nenhuma,uma,duas,infinitas;1
+Sistema possível determinado tem?;nenhuma solução,uma solução,infinitas soluções,duas;1
+Sistema impossível tem?;uma solução,duas soluções,nenhuma solução,infinitas soluções;2
+Sistema possível indeterminado tem?;uma solução,nenhuma solução,infinitas soluções,duas soluções;2
+Progressão aritmética é sequência?;multiplicativa,aditiva,exponencial,aleatória;1
+Coseno e seno são estudados em?;álgebra,geometria,trigonometria,estatística;2
+Seno de 90 graus é?;0,1,-1,indefinido;1
+Ângulo reto mede?;30,45,90,180;2
+Um círculo tem quantos graus?;180,360,90,270;1
+Um triângulo soma tem?;90,180,360,270;1
+Triângulo equilátero tem lados?;iguais,dois iguais,diferentes,paralelos;0
+Triângulo isósceles tem lados?;todos iguais,dois iguais,todos diferentes,todos paralelos;1
+Triângulo escaleno tem lados?;iguais,dois iguais,diferentes,paralelos;2
+Área do quadrado é?;lado²,base×altura,πr²,metade base altura;0
+Área do círculo é?;πr²,r²,r³,2πr;0
+Perímetro é?;área,soma dos lados,volume,diagonal;1
+Volume refere-se a?;2D,1D,3D,linha;2
+Função exponencial tem base?;positiva,negativa,zero,indefinida;0
+Probabilidade varia de?;0 a 1,1 a 10,-1 a 1,0 a 100;0
+Probabilidade de evento certo é?;0,0.5,1,indefinido;2
+Evento impossível tem probabilidade?;1,0,0.5,indefinido;1
+Moda é?;média,valor mais frequente,valor mínimo,soma;1
+Média é?;valor central,soma valores,valor mais frequente,valor maior;1
+Mediana é?;valor central,valor mais frequente,soma,média;0
+Variável qualitativa é?;numérica,categórica,contínua,discreta;1
+Gráfico de barras representa?;distribuição qualitativa,função,área,volume;0
+Inequação resolve?;igualdade,desigualdade,soma,produto;1
+Uma raiz da equação é?;valor que zera,valor que soma,valor que multiplica,derivada;0
+Função constante tem gráfico?;reta horizontal,reta vertical,parábola,ponto;0
+Função identidade é?;f(x)=0,f(x)=x,f(x)=x²,f(x)=1;1
+Função modular representa?;distância,valor negativo,valor nulo,produto;0
+|x| significa?;distância,sinal,raiz,potência;0
+Matriz é?;número,tabela,forma,linha;1
+Determinante é associado a?;matriz,função,limite,derivada;0
+Sistema linear usa?;matrizes,logaritmos,exponenciais,integrais;0
+Geometria analítica estuda?;formas,números,gráficos,equações no plano;3
+Reta tem equação?;ax+by+c=0,ax²+bx,f(x)=x,log;0
+Coeficiente angular da reta indica?;inclinação,intercepto,domínio,imagem;0
+Coeficiente linear indica?;inclinação,intercepto,domínio,gráfico;1
+Circunferência é?;área,linha que delimita círculo,volume,ponto;1
+Círculo é?;região interna,linha externa,ponto,conjunto;0
+Distância entre dois pontos usa?;Pitágoras,média,soma,produto;0
+Teorema de Pitágoras aplica-se a?;triângulo qualquer,retângulo,isósceles,equilátero;1
+a²+b²=c² é?;lei dos senos,Pitágoras,trigonometria,área;1
+Lei dos senos relaciona?;lados e ângulos,áreas,volumes,funções;0
+Lei dos cossenos aplica-se a?;triângulo qualquer,círculo,quadrado,funções;0
+Derivada está ligada a?;taxa de variação,área,volume,soma;0
+Integral está ligada a?;área,taxa,soma,produto;0
+Limite indica?;tendência,valor fixo,soma,produto;0
+Função contínua não tem?;saltos,gráfico,domínio,valor;0
+Polinômio é expressão?;com variáveis,com frações,com log,apenas números;0
+Grau do polinômio é?;maior expoente,menor valor,soma,coeficiente;0
+Função inversa desfaz?;multiplicação,soma,função original,derivada;2
+Composição de funções é?;soma,produto,aplicação sucessiva,inversa;2
+Logaritmo natural tem base?;2,10,e,π;2
+Número irracional é?;decimal exato,racional,infinito periódico,infinito não periódico;3
+Número racional é?;inteiro,fração,irracional,infinito não repetido;1
+Conjunto dos reais inclui?;apenas inteiros,inteiros e racionais,racionais e irracionais,naturais;2
+Intervalo aberto usa?;[],{},(),<>;2
+Intervalo fechado usa?;[],{},(),<>;0
+Função bijetora é?;injetora e sobrejetora,nenhuma,par,inversa;0
+Função injetora não repete?;valores de x,valores de y,coeficientes,gráficos;1
+Função sobrejetora cobre?;parte do contradomínio,todo contradomínio,apenas domínio,nada;1
+Sequência convergente tende a?;zero,infinito,valor fixo,aleatório;2
+Sequência divergente não tem?;limite,valor,soma,produto;0
+Probabilidade clássica é?;favoráveis/possíveis,possíveis/favoráveis,soma,produto;0
+Experimento aleatório é?;determinístico,previsível,incerto,fixo;2
+Espaço amostral é?;possibilidades,soma,eventos,produtos;0
+Evento é?;subconjunto,resultado,soma,produto;0
+Variável discreta assume?;valores contáveis,contínuos,irracionais,negativos;0
+Variável contínua assume?;intervalo,valores isolados,poucos valores,discretos;0
+Distribuição normal tem forma?;reta,curva sino,parábola,reta vertical;1
+Desvio padrão mede?;média,dispersão,soma,produto;1
+Correlação indica?;dependência,causalidade,soma,produto;0
+Regra de três resolve?;proporção,soma,produto,subtração;0
+Grandezas diretamente proporcionais variam?;mesmo sentido,inverso,aleatório,constante;0
+Grandezas inversamente proporcionais variam?;mesmo sentido,oposto,constante,aleatório;1
+Função logarítmica cresce?;sempre,nunca,depende,decresce;2
+Função exponencial cresce?;base>1,base<1,constante,nunca;0
+Assíntota é?;reta aproximada,ponto máximo,valor mínimo,domínio;0
+Função racional é?;polinômio,quociente,logaritmo,exponencial;1
+Polinômio de grau 0 é?;constante,linear,quadrático,cúbico;0
+Polinômio de grau 1 é?;linear,constante,quadrático,cúbico;0
+Polinômio de grau 2 é?;linear,quadrático,exponencial,logarítmico;1
+Coeficiente define?;forma,tamanho,direção,raiz;0
+Raiz positiva significa?;acima eixo,abaixo,indefinido,zero;0
+Raiz negativa significa?;acima eixo,abaixo,indefinido,zero;1
+Gráfico intercepta eixo x nas?;raízes,coeficientes,valores máximos,domínios;0

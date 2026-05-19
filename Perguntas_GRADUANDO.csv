@@ -1,0 +1,94 @@
+O que caracteriza um espaço vetorial?;fechado por soma e escalar,tem produto interno,é finito,tem derivadas;0
+Qual é a definição de base de um espaço vetorial?;conjunto qualquer,conjunto linearmente dependente,gerador e LI,subespaço;2
+Vetores linearmente independentes satisfazem?;combinação trivial igual a zero,determinante zero,soma nula,produto zero;0
+Dimensão de um espaço vetorial é?;número de vetores,número de dimensões da base,soma dos vetores,grau;1
+Transformação linear preserva?;produto interno,soma e produto por escalar,determinante,base;1
+Kernel de uma transformação linear é?;imagem,pré-imagem de zero,espaço dual,matriz;1
+Imagem de T é?;domínio,contradomínio,subconjunto de chegada,kernel;2
+Teorema do núcleo-imagem relaciona?;determinante,dimensão,soma,produto;1
+Determinante zero implica?;invertível,singular,identidade,ortogonal;1
+Matriz invertível possui?;determinante zero,inversa nula,inversa definida,eigenvalor zero;2
+Autovalor é?;vetor,escalar,valor associado a autovetor,matriz inversa;2
+Autovetor satisfaz?;Av=0,Av=λv,A=v,λ=A;1
+Espaço normado possui?;norma,produto interno,base,dimensão;0
+Espaço com produto interno define?;norma,distância,base,dimensão;1
+Sequência convergente tende a?;valor limite,infinito,aleatório,zero sempre;0
+Série converge quando?;soma diverge,limite,soma finita,sequência cresce;2
+Teste da razão avalia?;convergência,derivada,integral,continuidade;0
+Teste da comparação usa?;limites,funções,integrais,desigualdade;3
+Função contínua em ponto significa?;limite existe,limite igual valor,derivada existe,integral existe;1
+Derivada representa?;taxa de variação,área,volume,limite;0
+Integral definida representa?;taxa,área,limite,derivada;1
+Teorema fundamental do cálculo liga?;derivada e integral,soma,produto,limite;0
+Função diferenciável é?;contínua sempre,derivável,crescente,integrável;0
+Nem toda função contínua é?;integrável,derivável,limitada,periódica;1
+Limite lateral considera?;um lado,zero,ambos lados,infinito;0
+Espaço métrico define?;distância,norma,produto,base;0
+Sequência de Cauchy implica?;convergência em métrico completo,divergência,soma,produto;0
+Espaço completo contém?;todas sequências convergentes,Cauchy convergente,apenas contínuas,apenas fechadas;1
+Função injetora satisfaz?;valores repetidos,valores únicos,imagem total,domínio total;1
+Função sobrejetora cobre?;domínio,imagem,contradomínio,kernel;2
+Função bijetora possui?;inversa,soma,produto,limite;0
+Derivada de função constante é?;0,1,x,indefinido;0
+Derivada de x² é?;x,2x,x²,1;1
+Integral de 1 é?;x,x²,ln x,constante;0
+Matriz simétrica satisfaz?;A=A^T,A=0,A inversa,identidade;0
+Matriz ortogonal satisfaz?;A^T=A^-1,determinante zero,A=A^T,A singular;0
+Autovalores de matriz real podem ser?;apenas reais,apenas complexos,ambos,nenhum;2
+Base ortonormal tem vetores?;paralelos,ortogonais e unitários,dependentes,nulos;1
+Produto interno define?;ângulo,matriz,determinante,dimensão;0
+Espaço euclidiano é?;vetorial com produto interno,métrico incompleto,discreto,topológico;0
+Topologia define?;abertos e fechados,limites,derivadas,integrais;0
+Conjunto aberto contém?;todos pontos interiores,fronteira,limite,exterior;0
+Conjunto fechado contém?;todos limites,apenas interiores,apenas fronteira,nenhum;0
+Derivada direcional mede?;taxa direção,derivada parcial,integral,limite;0
+Gradiente aponta?;mínimo,máximo,crescimento,zero;2
+Ponto crítico ocorre quando?;gradiente zero,integral zero,função zero,limite zero;0
+Máximo local ocorre quando?;crescimento,parada,valor máximo global,ponto crítico;3
+Mínimo local ocorre quando?;valor mínimo,derivada positiva,função linear,ponto crítico;3
+Série geométrica converge se?;q>1,q<1,q=1,sempre;1
+Soma infinita converge se?;sequência limitada,termos decrescem,série definida,sempre diverge;2
+Função integrável é?;limitada,contínua,diferenciável,definida;0
+Integral imprópria trata?;limites infinitos,soma discreta,produto,derivada;0
+Métrica induz topologia?;sim,não,apenas em linear,apenas em real;0
+Subespaço é?;conjunto não vazio fechado sob operações,base qualquer,matriz,vetor;0
+Espaço dual contém?;funcionais lineares,vetores,base,matriz;0
+Isomorfismo é?;mapa linear bijetor,função identidade,matriz inversa,soma;0
+Autovalor zero indica?;não invertível,invertível,ortogonal,simétrica;0
+Forma bilinear é?;linear em dois argumentos,função simples,matriz vetorial,polinomial;0
+Forma quadrática deriva de?;forma bilinear,linear,matriz diagonal,função;0
+Espaço compacto é?;limitado e fechado,aberto,infinito,discreto;0
+Teorema de Bolzano-Weierstrass trata?;convergência de subsequências,limite função,derivada,soma;0
+Sequência limitada possui?;subsequência convergente,divergente,crescente,decrescente;0
+Continuidade uniforme implica?;continuidade simples,derivada,integral,limite;0
+Função Lipschitz é?;limitada,contínua com constante,derivável,monótona;1
+Equação diferencial envolve?;derivadas,integrais,somas,produtos;0
+Solução geral contém?;constantes arbitrárias,valores fixos,zeros,limites;0
+Equação linear é?;grau 1,grau 2,não linear,constante;0
+Sistema homogêneo possui?;solução trivial apenas,infinita,nenhuma,única;0
+Sistema homogêneo trivial quando?;x=0,determinante zero,matriz identidade,vetor zero;0
+Transformação identidade faz?;nada,tudo zero,inverso,soma;0
+Polinômio irreduzível não pode?;fatorar,somar,derivar,integrar;0
+Anel é?;grupo com multiplicação,espaço vetorial,corpo,topológico;0
+Corpo é?;anel com inversos multiplicativos,espaço vetorial,grupo,topológico;0
+Grupo abeliano é?;comutativo,associativo,neutro,inverso;0
+Elemento neutro é?;não altera,inverso,soma,produto;0
+Elemento inverso satisfaz?;produto unitário,soma zero,produto zero,identidade;0
+Homomorfismo preserva?;operações,derivadas,integrais,limites;0
+Isomorfismo preserva?;estrutura,forma,valor,soma;0
+Espaço vetorial finito tem?;base finita,base infinita,dimensão infinita,nenhuma;0
+Dimensão finita implica?;base finita,base infinita,dependência,nenhuma;0
+Autovetores formam base se?;independentes,próprios,ortogonais,linearmente relacionados;0
+Polinômio característico define?;autovalores,autovetores,matriz identidade,determinante;0
+Diagonalização ocorre quando?;base de autovetores,matriz invertível,determinante zero,ortogonal;0
+Matriz diagonalizável tem?;base de autovetores,determinante zero,matriz identidade,vetor;0
+Operador linear contínuo se?;limitado,diferenciável,integrável,derivável;0
+Norma induz distância?;sim,não,apenas em real,apenas em linear;0
+Espaço de Banach é?;completo e normado,métrico,vetorial,topológico;0
+Espaço de Hilbert é?;completo com produto interno,apenas normado,apenas métrico,linear;0
+Operador compacto leva?;limitados em compactos,contínuos em abertos,abertos em fechados,fechados em limitados;0
+Sequência ortogonal satisfaz?;produto interno zero,soma zero,limite zero,derivada zero;0
+Série de Fourier representa?;função periódica,polinômio,vetor,matriz;0
+Transformada de Fourier atua em?;funções,sinais,matrizes,derivadas;0
+Equação parcial envolve?;derivadas parciais,somas,produtos,limites;0
+Equação ordinária envolve?;derivadas simples,integrais,polinômios,funções;0

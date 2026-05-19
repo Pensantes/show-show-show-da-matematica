@@ -1,0 +1,228 @@
+<!-- @format -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cossette+Texte:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <title>Show do Milhão</title>
+
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
+  </head>
+
+  <body>
+    <img id="logo" src="assets/SHOW_SHOW_SHOW_DA_MATEMATICA.png" />
+
+    <p id="pergunta">Qual é a figura geométrica com 3 lados?</p>
+
+    <div id="grupo-btn">
+      <button id="btn-a" data-letra="a"><p>Triângulo</p></button>
+      <button id="btn-b" data-letra="b"><p>Retângulo</p></button>
+      <button id="btn-c" data-letra="c"><p>Quadrado</p></button>
+      <button id="btn-d" data-letra="d"><p>Cachorro</p></button>
+    </div>
+
+    <p id="final" hidden>Acabou</p>
+
+    <div id="erro" class="card">
+      <img src="assets/long-tears.gif" alt="❌" />
+      <h1>Resposta Errada!</h1>
+      <p id="resposta-certa">A resposta certa era...</p>
+    </div>
+
+    <div id="acerto" class="card">
+      <img src="assets/applause.gif" alt="❌" />
+      <h1>Resposta Certa!</h1>
+    </div>
+
+    <div
+      style="
+        display: flex;
+        flex-direction: row;
+        width: 560px;
+        justify-content: space-between;
+        align-items: center;
+      "
+    >
+      <p id="nro_pergunta">Pergunta X/X</p>
+      <p id="pontos">Pontos: 0</p>
+    </div>
+
+    <div id="comecar">Começar</div>
+  </body>
+
+  <script type="module">
+    let comecar = document.getElementById("comecar");
+    comecar.onclick = () => {
+      const musica_de_fundo = new Audio("assets/suspense-show-do-milhao.mp3");
+      musica_de_fundo.play();
+
+      comecar.style.display = "none";
+    };
+
+    const audio_pergunta = new Audio("assets/perguntashowdomilhao.mp3");
+    const audio_certo = new Audio("assets/certa-resposta-show-do-milhao.mp3");
+    const audio_errado = new Audio("assets/errou-show-do-milhao.mp3");
+
+    let lista_perguntas = [];
+
+    let perguntas_response = await fetch("Perguntas_GRADUANDO.csv");
+    let perguntas_text = await perguntas_response.text();
+
+    const linhas = perguntas_text.split("\n");
+
+    lista_perguntas = linhas
+      .filter((l) => l.trim() !== "")
+      .map((linha) => {
+        const [pergunta, opcoes, index] = linha.split(";");
+
+        return {
+          pergunta: pergunta.trim(),
+          opcoes: opcoes.split(",").map((o) => o.trim()),
+          indice_correto: Number(index),
+        };
+      });
+
+    lista_perguntas = shuffle(lista_perguntas).slice(0, 10);
+    // console.log("Lista perguntas = ", lista_perguntas);
+
+    // console.log(lista_perguntas);
+
+    let index_pergunta = -1;
+
+    let pontos = 0;
+
+    let grupo_btn = document.getElementById("grupo-btn");
+    let botao_a = document.getElementById("btn-a");
+    let botao_b = document.getElementById("btn-b");
+    let botao_c = document.getElementById("btn-c");
+    let botao_d = document.getElementById("btn-d");
+    let botoes = [botao_a, botao_b, botao_c, botao_d];
+
+    botoes.forEach((btn) => (btn.onclick = onButtonClick));
+
+    let elemento_pontos = document.getElementById("pontos");
+    let nro_pergunta = document.getElementById("nro_pergunta");
+    let pergunta = document.getElementById("pergunta");
+
+    let erro = document.getElementById("erro");
+    let resposta_certa = document.getElementById("resposta-certa");
+    let acerto = document.getElementById("acerto");
+
+    // erro.style.display = "none";
+    erro.style.opacity = 0;
+    erro.style.transform = "translate(-50%, -50%) scale(0.5)";
+
+    // acerto.style.display = "none";
+    acerto.style.opacity = 0;
+    acerto.style.transform = "translate(-50%, -50%) scale(0.5)";
+
+    let final = document.getElementById("final");
+
+    let pergunta_atual = {};
+
+    function shuffle(arr) {
+      let nova_arr = [...arr];
+      for (let i = 0; i < arr.length; i++) {
+        const x = Math.floor(Math.random() * arr.length);
+        const y = Math.floor(Math.random() * arr.length);
+
+        [nova_arr[x], nova_arr[y]] = [nova_arr[y], nova_arr[x]];
+      }
+
+      return nova_arr;
+    }
+
+    function atualizarPergunta() {
+      index_pergunta += 1;
+
+      if (index_pergunta >= lista_perguntas.length) {
+        pergunta.hidden = true;
+        botao_a.hidden = true;
+        botao_a.style.display = "none";
+        botao_b.hidden = true;
+        botao_b.style.display = "none";
+        botao_c.hidden = true;
+        botao_c.style.display = "none";
+        botao_d.hidden = true;
+        botao_d.style.display = "none";
+        grupo_btn.style.display = "none";
+
+        final.hidden = false;
+        final.innerText = `Parabéns! Você fez ${pontos}/10 pontos`;
+
+        return;
+      }
+
+      audio_pergunta.play();
+
+      pergunta_atual = lista_perguntas[index_pergunta];
+
+      nro_pergunta.innerText = `Pergunta ${index_pergunta + 1}/10`;
+
+      let novas_opcoes = shuffle(pergunta_atual.opcoes);
+
+      pergunta.innerText = pergunta_atual.pergunta;
+      botao_a.firstElementChild.innerText = novas_opcoes[0];
+      botao_b.firstElementChild.innerText = novas_opcoes[1];
+      botao_c.firstElementChild.innerText = novas_opcoes[2];
+      botao_d.firstElementChild.innerText = novas_opcoes[3];
+    }
+
+    atualizarPergunta();
+
+    function onButtonClick(e) {
+      let resposta = e.target.innerText;
+
+      console.log(
+        pergunta_atual.opcoes[pergunta_atual.indice_correto],
+        resposta
+      );
+
+      if (
+        pergunta_atual.opcoes[pergunta_atual.indice_correto].toLowerCase() ==
+        resposta.toLowerCase()
+      ) {
+        pontos += 1;
+        elemento_pontos.innerText = `Pontos: ${pontos}`;
+
+        audio_certo.play();
+
+        acerto.style.display = "flex";
+        acerto.style.opacity = 1;
+        acerto.style.transform = "translate(-50%, -50%) scale(1)";
+        setTimeout(() => {
+          // acerto.style.display = "none";
+          acerto.style.opacity = 0;
+          acerto.style.transform = "translate(-50%, -50%) scale(0.5)";
+          atualizarPergunta();
+        }, 1000);
+      } else {
+        audio_errado.play();
+        resposta_certa.innerText = `A resposta certa era ${
+          pergunta_atual.opcoes[pergunta_atual.indice_correto]
+        }`;
+        erro.style.display = "flex";
+        erro.style.opacity = 1;
+        erro.style.transform = "translate(-50%, -50%) scale(1)";
+        setTimeout(() => {
+          // erro.style.display = "none";
+          erro.style.opacity = 0;
+          erro.style.transform = "translate(-50%, -50%) scale(0.5)";
+          atualizarPergunta();
+        }, 2000);
+      }
+    }
+  </script>
+</html>
