@@ -1,4 +1,4 @@
-;Quais destas são características necessárias para ser um espaço vetorial?;ser fechado para soma de vetores e multiplicação por escalar,ter produto interno e externo definido,ser finito,possuir derivadas;0;
+Quais destas são características necessárias para ser um espaço vetorial?;ser fechado para soma de vetores e multiplicação por escalar,ter produto interno e externo definido,ser finito,possuir derivadas;0;
 Qual é a definição de uma base de um espaço vetorial?;conjunto qualquer de vetores,conjunto linearmente dependente,conjunto gerador e linearmente independente,subespaço qualquer;2;
 Vetores linearmente independentes satisfazem qual propriedade?;apenas a combinação linear trivial resulta no vetor nulo,determinante igual a zero,soma igual a zero,produto igual a zero;0;
 A dimensão de um espaço vetorial é dada pelo?;número de vetores do espaço,número de vetores de uma base,soma dos vetores,grau do espaço;1;
