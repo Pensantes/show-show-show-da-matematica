@@ -1,0 +1,107 @@
+;Quais destas são características necessárias para ser um espaço vetorial?;ser fechado para soma de vetores e multiplicação por escalar,ter produto interno e externo definido,ser finito,possuir derivadas;0;
+Qual é a definição de uma base de um espaço vetorial?;conjunto qualquer de vetores,conjunto linearmente dependente,conjunto gerador e linearmente independente,subespaço qualquer;2;
+Vetores linearmente independentes satisfazem qual propriedade?;apenas a combinação linear trivial resulta no vetor nulo,determinante igual a zero,soma igual a zero,produto igual a zero;0;
+A dimensão de um espaço vetorial é dada pelo?;número de vetores do espaço,número de vetores de uma base,soma dos vetores,grau do espaço;1;
+Uma transformação linear preserva quais operações?;produto interno,soma de vetores e multiplicação por escalar,determinante,base ortonormal;1;
+Uma transformação linear preserva quais operações?;produto interno,soma de vetores e multiplicação por escalar,determinante,base ortonormal;1 ;
+O núcleo de uma transformação linear é?;a imagem da transformação,o conjunto de vetores levados ao vetor nulo,o espaço dual,a matriz da transformação;1 ;
+A imagem de uma transformação linear é?;o domínio,o contradomínio,o conjunto de vetores obtidos pela transformação,o núcleo;2 ;
+O teorema núcleo-imagem relaciona?;determinante e traço,dimensão do núcleo e da imagem,soma e produto,base e dimensão;1 ;
+Determinante igual a zero implica que a matriz é?;invertível,singular,identidade,ortogonal;1 ;
+Uma matriz invertível possui?;determinante nulo,inversa nula,inversa bem definida,autovalor zero;2 ;
+Autovalor é?;um vetor associado à matriz,um escalar associado a um autovetor,uma matriz inversa,um produto interno;1;
+Um autovetor satisfaz?;Av=0,Av=λv,A=v,λ=A;1;
+Um espaço normado possui?;uma norma,produto interno,base ortonormal,dimensão finita;0;
+Um espaço com produto interno define naturalmente?;uma norma,uma base,uma dimensão,um determinante;0;
+Uma sequência convergente tende a?;um valor limite,infinito,um valor aleatório,zero sempre;0;
+Uma série converge quando?;a soma diverge,o limite da sequência existe,a soma parcial tende a um valor finito,a sequência cresce indefinidamente;2;
+O teste da razão é usado para analisar?;convergência de séries,derivadas,integrais,continuidade;0;
+O teste da comparação utiliza?;limites laterais,funções deriváveis,integrais impróprias,desigualdades entre termos;3;
+Uma função contínua em um ponto significa que?;só o limite é necessario,o limite é igual ao valor da função,a derivada existe,a integral existe;1;
+A derivada representa?;taxa de variação instantânea,área sob a curva,volume,limite infinito;0;
+A integral definida representa geometricamente?;taxa de crescimento,área acumulada,limite lateral,derivada;1;
+O teorema fundamental do cálculo relaciona?;derivada e integral,soma e produto,limite e sequência,matriz e vetor;0;
+Toda função diferenciável é?;contínua,crescente,constante,periódica;0;
+Nem toda função contínua é?;integrável,derivável,definida,tem imagem compacta se definida em conjunto compacto;1;
+O limite lateral considera?;aproximação por apenas um lado,aproximação simultânea pelos dois lados,infinito apenas,zero apenas;0;
+Um espaço métrico é definido por?;uma distância,uma norma,um produto interno,uma base;0;
+Uma sequência de Cauchy implica?;convergência em espaços completos,divergência,soma finita,produto constante;0;
+Um espaço completo é aquele em que?;toda sequência convergente é limitada,toda sequência de Cauchy converge,apenas funções contínuas existem,apenas conjuntos fechados existem;1;
+Uma função injetora satisfaz?;valores repetidos na imagem,valores distintos do domínio possuem imagens distintas,a imagem coincide com o contradomínio,o domínio é completo;1;
+Uma função sobrejetora satisfaz?;todo elemento do domínio é distinto,a imagem é vazia,todo elemento do contradomínio é atingido,o núcleo é trivial;2;
+Uma função bijetora admite?;função inversa,soma preservada,produto interno,limite finito;0;
+A derivada de uma função constante é?;0,1,x,indefinida;0;
+A derivada de x² é?;x,2x,x²,1;1;
+A integral indefinida de 1 é?;x+C,x²+C,ln(x)+C,constante;0;
+Uma matriz simétrica satisfaz?;A=A^T,A=0,A é inversa da identidade,A é singular;0;
+Uma matriz ortogonal satisfaz?;A^T=A^-1,determinante zero,A=A^T,A é singular;0;
+Os autovalores de uma matriz real podem ser?;apenas reais,apenas complexos,reais ou complexos,nenhum dos anteriores;2;
+Uma base ortonormal possui vetores?;paralelos,ortogonais e unitários,linearmente dependentes,nulos;1;
+O produto interno permite definir?;ângulo entre vetores,matriz inversa,determinante,dimensão;0;
+Um espaço euclidiano é?;um espaço vetorial com produto interno,um espaço métrico incompleto,um espaço discreto,um espaço topológico qualquer;0;
+A topologia estuda principalmente?;conjuntos abertos e fechados,derivadas,integrais,autovalores;0;
+Em um conjunto aberto?;tods os pontos são interiores,contém apenas pontos de fronteira,contém todos os limites,não há nenhum ponto;0;
+Um conjunto fechado contém?;todos os seus pontos de acumulação,apenas pontos interiores,apenas fronteira,nenhum ponto limite;0;
+A derivada direcional mede?;a taxa de variação em uma direção,a derivada parcial total,a integral acumulada,o limite da função;0;
+O gradiente aponta na direção de?;mínimo local,máxima curvatura,maior crescimento da função,valor nulo;2;
+Um ponto crítico ocorre quando?;o gradiente é nulo,a integral é nula,a função vale zero,o limite não existe;0;
+Um máximo local geralmente ocorre em?;um ponto de crescimento constante,um ponto de parada obrigatoriamente,um máximo global,um ponto crítico de segunda derivada negativa;3;
+Um mínimo local geralmente ocorre em?;um valor mínimo absoluto,um ponto de derivada positiva,uma função linear,um ponto crítico de segunda derivada positiva;3;
+Uma série geométrica converge quando?;|q|>1,|q|<1,q=1,sempre;1;
+Uma soma infinita converge quando?;a sequência é limitada,os termos diminuem,a soma parcial tende a um valor finito,sempre diverge;2;
+Uma função integrável pela integral de Riemann em intervalo fechado é necessariamente?;limitada,contínua,diferenciável,linear;0;
+Uma integral imprópria trata de?;intervalos infinitos ou singularidades,somas discretas,produtos infinitos,derivadas parciais;0;
+Uma métrica induz uma topologia?;sim,não,apenas em espaços lineares,apenas nos reais;0;
+Um subespaço vetorial é?;um conjunto fechado para as operações de soma e multiplicação por escalar,uma base qualquer,uma matriz quadrada,um conjunto arbitrário;0;
+O espaço dual de um espaço vetorial contém?;funcionais lineares,vetores ortogonais,bases canônicas,matrizes diagonais;0;
+Um isomorfismo é?;uma aplicação linear bijetora,uma função identidade,uma matriz inversa,uma soma direta;0;
+Autovalor zero indica que a matriz é?;não invertível,invertível,ortogonal,simétrica;0;
+Uma forma bilinear é?;linear em cada um de dois argumentos,uma função escalar simples,uma matriz vetorial,um polinômio quadrático;0;
+Uma forma quadrática é obtida a partir de?;de uma forma bilinear simétrica,uma função linear,uma matriz diagonal,uma derivada;0;
+Um conjunto compacto em ℝⁿ é?;fechado e limitado,aberto,infinito,discreto;0;
+O teorema de Bolzano-Weierstrass afirma a existência de?;subsequência convergente,derivada contínua,soma convergente,produto limitado;0;
+Toda sequência limitada nos R^n possui?;uma subsequência convergente,uma subsequência divergente,uma sequência crescente,uma sequência decrescente;0;
+Continuidade uniforme implica?;continuidade simples,derivabilidade,integrabilidade,existência de limite infinito;0;
+Uma função Lipschitz é?;limitada,contínua com constante de Lipschitz,diferenciável,monótona;1;
+Uma equação diferencial envolve?;derivadas,integrais,somas infinitas,produtos internos;0;
+A solução geral de uma equação diferencial contém?;constantes arbitrárias,valores fixos,apenas zeros,limites infinitos;0;
+Uma equação linear possui?;variaveis em primeira potencia,variaveis em segunda potencia,não linearidade,constante obrigatória;0;
+Um sistema homogêneo sempre possui?;a solução trivial,pelo menos duas soluções,nenhuma solução,uma única solução não trivial;0;
+A solução trivial de um sistema homogêneo é?;x=0,determinante zero,matriz identidade,vetor unitário;0;
+A transformação identidade faz?;mantém cada vetor inalterado,leva tudo a zero,calcula inversos,soma vetores;0;
+Um polinômio irredutível não pode ser?;fatorado em polinômios de menor grau,somado,derivado,integrado;0;
+Um anel é?;um conjunto com soma e multiplicação compatíveis,um espaço vetorial,um corpo,um espaço topológico;0;
+Um corpo é?;um anel em que todo elemento não nulo possui inverso multiplicativo,um espaço vetorial,um grupo aditivo,um espaço métrico;0;
+Um grupo abeliano é?;comutativo e associativo,associativo apenas,sem elemento neutro,sem inversos;0;
+O elemento neutro de uma operação é aquele que?;não altera os elementos,inverte sinais,soma zero,anula produtos;0;
+O elemento inverso satisfaz?;a operação entre um elemento e seu inverso resulta no neutro,a soma é zero,o produto é zero,a identidade desaparece;0;
+Um homomorfismo preserva?;operações algébricas,derivadas,integrais,limites;0;
+Um isomorfismo algébrico preserva?;a estrutura algébrica,a forma geométrica,o valor numérico,a soma parcial;0;
+Um espaço vetorial de dimensão finita possui?;uma base finita,uma base infinita,dimensão infinita,nenhuma base;0;
+Dimensão finita implica existência de?;base finita,base infinita,dependência linear obrigatória,nenhuma propriedade;0;
+Autovetores formam uma base quando são?;linearmente independentes,idênticos,ortogonais obrigatoriamente,lineares dependentes;0;
+O polinômio característico é usado para determinar?;autovalores,autovetores diretamente,matriz identidade,posto da matriz;0;
+Uma matriz é diagonalizável quando possui?;uma base de autovetores do espaço,determinante zero,matriz identidade,posto máximo;0;
+Uma matriz diagonalizável admite?;base formada por autovetores,determinante nulo obrigatório,apenas autovalores reais,uma única inversa;0;
+Um operador linear contínuo em espaço normado é?;limitado,diferenciável,integrável,derivável;0;
+Toda norma induz uma distância?;sim,não,apenas em ℝ,apenas em espaços lineares finitos;0;
+Um espaço de Banach é?;completo e normado,apenas métrico,apenas vetorial,topológico qualquer;0;
+Um espaço de Hilbert é?;completo com produto interno na norma induzida,apenas normado,apenas métrico,linear sem norma;0;
+Um operador compacto transforma?;conjuntos limitados em conjuntos relativamente compactos,conjuntos contínuos em abertos,abertos em fechados,fechados em limitados;0;
+Uma sequência ortogonal satisfaz?;produto interno nulo entre vetores distintos,soma zero,limite zero,derivada nula;0;
+Uma série de Fourier representa?;funções periódicas,polinômios,vetores,matrizes;0;
+Qual erro metodológico está presente neste gráfico de dispersão?;correlação espúria,distribuição normal,ortogonalidade linear,convergência uniforme;0;Imagem\Imagem_GRADUAÇÃO_92.png
+A matriz exibida na imagem é diagonalizável?;sim pois possui autovetores linearmente independentes,não pois possui determinante diferente de zero,sim pois é triangular,não pois possui traço positivo;0;Imagem\Imagem_GRADUAÇÃO_93.png
+O gráfico apresentado indica convergência ou divergência da sequência?;convergência para zero,divergência oscilatória,divergência infinita,periodicidade constante;0;Imagem\Imagem_GRADUAÇÃO_94.png
+A superfície mostrada possui ponto de sela?;sim,não,apenas máximo local,apenas mínimo global;0;Imagem\Imagem_GRADUAÇÃO_95.png
+O diagrama de fases representa qual tipo de equilíbrio dinâmico?;instável,assintoticamente estável,centro periódico,caótico;1;Imagem\Imagem_GRADUAÇÃO_96.png
+A transformação geométrica ilustrada preserva ângulos?;sim pois é ortogonal,não pois altera áreas,sim pois muda escala,não pois é linear;0;Imagem\Imagem_GRADUAÇÃO_97.png
+O histograma apresentado sugere distribuição normal, assimétrica ou bimodal?;normal,assimétrica à direita,bimodal,periódica;2;Imagem\Imagem_GRADUAÇÃO_98.png
+O campo vetorial desenhado aparenta ser conservativo?;sim pois não apresenta rotação aparente,não pois possui circulação fechada,sim pois é divergente,não pois é contínuo;1;Imagem\Imagem_GRADUAÇÃO_99.png
+O sólido representado possui simetria axial, planar ou ambas?;apenas axial,apenas planar,ambas,nenhuma;2;Imagem\Imagem_GRADUAÇÃO_100.jpg
+
+
+
+
+
+
