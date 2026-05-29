@@ -1,5 +1,4 @@
 <!-- @format -->
-
 <!DOCTYPE html>
 <html lang="pt-BR">
   <head>
@@ -33,23 +32,33 @@
 
       <div>
         <button id="ENSINO_FUNDAMENTAL_II">Ensino Fundamental II</button>
-
         <button id="ENSINO_MÉDIO">Ensino Médio</button>
-
         <button id="GRADUAÇÃO">Graduação</button>
       </div>
     </div>
 
     <!-- Pergunta -->
     <div id="grupo-btn">
-      <div id="pergunta">
-        <img
-          id="img-pergunta"
-          src="imagem/Imagem_ENSINO_FUNDAMENTAL_II_90.jpg"
-          width="200"
-        />
+      <div id="grupo-pergunta">
+        <div id="pergunta">
+          <img
+            id="img-pergunta"
+            src="imagem/Imagem_ENSINO_FUNDAMENTAL_II_90.jpg"
+            width="200"
+          />
+          <p id="texto-pergunta">Qual é a figura geométrica com 3 lados?</p>
+        </div>
 
-        <p id="texto-pergunta">Qual é a figura geométrica com 3 lados?</p>
+        <!-- Botões de Ajuda -->
+        <div id="ajudas-container">
+          <button id="btn-pular" class="btn-ajuda">⏩ Pular Pergunta</button>
+          <button id="btn-universitario" class="btn-ajuda">
+            🎓 Universitários
+          </button>
+          <button id="btn-eliminar" class="btn-ajuda">
+            ❌ Eliminar Errada
+          </button>
+        </div>
       </div>
 
       <!-- Alternativas -->
@@ -57,15 +66,12 @@
         <button id="btn-a" class="alternativa" data-letra="a">
           <p>Triângulo</p>
         </button>
-
         <button id="btn-b" class="alternativa" data-letra="b">
           <p>Retângulo</p>
         </button>
-
         <button id="btn-c" class="alternativa" data-letra="c">
           <p>Quadrado</p>
         </button>
-
         <button id="btn-d" class="alternativa" data-letra="d">
           <p>Cachorro</p>
         </button>
@@ -73,37 +79,51 @@
     </div>
 
     <!-- Tela Final -->
-    <p id="final" hidden>Acabou</p>
+    <div id="final" hidden>
+      <p id="final-mensagem">Acabou</p>
+      <div class="tela-final-botoes">
+        <button id="btn-reset" class="btn-reset">🔄 Jogar Novamente</button>
+      </div>
+    </div>
 
     <!-- Card Erro -->
     <div id="erro" class="card">
       <img src="assets/long-tears.gif" alt="❌" />
-
       <h1>Resposta Errada!</h1>
-
       <p id="resposta-certa">A resposta certa era...</p>
     </div>
 
     <!-- Card Acerto -->
     <div id="acerto" class="card">
       <img src="assets/applause.gif" alt="✅" />
-
       <h1>Resposta Certa!</h1>
     </div>
 
+    <!-- Card Pular -->
+    <div id="card-pular" class="card">
+      <img
+        src="assets/skip.gif"
+        alt="⏩"
+        onerror="this.src='https://cdn-icons-png.flaticon.com/512/4782/4782706.png'"
+      />
+      <h1>Pergunta Pulada!</h1>
+      <p id="resposta-pular">A resposta certa era...</p>
+      <button onclick="fecharCardPular()">Continuar</button>
+    </div>
+
+    <!-- Card Universitários -->
+    <div id="card-universitario" class="card">
+      <img
+        src="assets/nerd.gif"
+        alt="🎓"
+        onerror="this.src='https://cdn-icons-png.flaticon.com/512/3135/3135715.png'"
+      />
+      <h1>Ajuda dos Universitários</h1>
+      <button onclick="fecharCardUniversitario()">Fechar</button>
+    </div>
+
     <!-- Pontuação -->
-    <div
-      style="
-        display: flex;
-        flex-direction: row;
-        width: 1200px;
-        height: 40px;
-        margin-top: 20px;
-        justify-content: right;
-        align-items: center;
-        gap: 20px;
-      "
-    >
+    <div id="footer">
       <p id="nro_pergunta">Pergunta X/X</p>
       <p id="pontos">Pontos: 0</p>
     </div>
@@ -114,9 +134,7 @@
       // =========================================================
 
       const menu = document.getElementById("menu");
-
       const grupo_btn = document.getElementById("grupo-btn");
-
       const pergunta = document.getElementById("pergunta");
       const texto_pergunta = document.getElementById("texto-pergunta");
       const img_pergunta = document.getElementById("img-pergunta");
@@ -136,16 +154,26 @@
 
       const acerto = document.getElementById("acerto");
 
-      const final = document.getElementById("final");
+      const finalDiv = document.getElementById("final");
+      const finalMensagem = document.getElementById("final-mensagem");
+
+      // Botões de ajuda
+      const btnPular = document.getElementById("btn-pular");
+      const btnUniversitario = document.getElementById("btn-universitario");
+      const btnEliminar = document.getElementById("btn-eliminar");
+      const btnReset = document.getElementById("btn-reset");
+
+      // Cards de ajuda
+      const cardPular = document.getElementById("card-pular");
+      const cardUniversitario = document.getElementById("card-universitario");
+      const respostaPular = document.getElementById("resposta-pular");
 
       // =========================================================
       // ÁUDIOS
       // =========================================================
 
       const audio_pergunta = new Audio("assets/perguntashowdomilhao.mp3");
-
       const audio_certo = new Audio("assets/certa-resposta-show-do-milhao.mp3");
-
       const audio_errado = new Audio("assets/errou-show-do-milhao.mp3");
 
       // =========================================================
@@ -153,12 +181,21 @@
       // =========================================================
 
       let lista_perguntas = [];
-
       let pergunta_atual = {};
-
       let index_pergunta = -1;
-
       let pontos = 0;
+      let musica_de_fundo = null;
+      let nivelSelecionado = "";
+
+      // Estado das ajudas (usadas apenas uma vez)
+      let ajudasUsadas = {
+        pular: false,
+        universitario: false,
+        eliminar: false,
+      };
+
+      // Estado da eliminação (botão que foi eliminado)
+      let botoesEliminados = [];
 
       // =========================================================
       // CONFIGURAÇÃO INICIAL
@@ -170,6 +207,16 @@
       acerto.style.opacity = 0;
       acerto.style.transform = "translate(-50%, -50%) scale(0.5)";
 
+      cardPular.style.opacity = 0;
+      cardPular.style.transform = "translate(-50%, -50%) scale(0.5)";
+      cardPular.style.display = "none";
+      cardPular.style.pointerEvents = "none";
+
+      cardUniversitario.style.opacity = 0;
+      cardUniversitario.style.transform = "translate(-50%, -50%) scale(0.5)";
+      cardUniversitario.style.display = "none";
+      cardUniversitario.style.pointerEvents = "none";
+
       botoes.forEach((btn) => {
         btn.onclick = onButtonClick;
       });
@@ -178,13 +225,38 @@
         botao.onclick = () => selecionaNivel(botao.id);
       });
 
+      // Eventos dos botões de ajuda
+      btnPular.onclick = usarPular;
+      btnUniversitario.onclick = usarUniversitario;
+      btnEliminar.onclick = usarEliminar;
+      btnReset.onclick = resetarJogo;
+
+      // Função para fechar cards de ajuda
+      window.fecharCardPular = function () {
+        cardPular.style.opacity = 0;
+        cardPular.style.transform = "translate(-50%, -50%) scale(0.5)";
+        setTimeout(() => {
+          cardPular.style.display = "none";
+          cardPular.style.pointerEvents = "none";
+          atualizarPergunta();
+        }, 300);
+      };
+
+      window.fecharCardUniversitario = function () {
+        cardUniversitario.style.opacity = 0;
+        cardUniversitario.style.transform = "translate(-50%, -50%) scale(0.5)";
+        setTimeout(() => {
+          cardUniversitario.style.display = "none";
+          cardUniversitario.style.pointerEvents = "none";
+        }, 300);
+      };
+
       // =========================================================
       // FUNÇÕES
       // =========================================================
 
       async function carrega_perguntas(nivel) {
         let perguntas_response = await fetch(`Perguntas_${nivel}.csv`);
-
         let perguntas_text = await perguntas_response.text();
 
         const linhas = perguntas_text.split("\n");
@@ -193,14 +265,10 @@
           .filter((linha) => linha.trim() !== "")
           .map((linha) => {
             const [pergunta, opcoes, index, imagem] = linha.split(";");
-
             return {
               pergunta: pergunta.trim(),
-
               opcoes: opcoes.split(",").map((opcao) => opcao.trim()),
-
               indice_correto: Number(index),
-
               imagem: imagem.trim(),
             };
           });
@@ -210,32 +278,48 @@
 
       function shuffle(arr) {
         let nova_arr = [...arr];
-
         for (let i = 0; i < arr.length; i++) {
           const x = Math.floor(Math.random() * arr.length);
-
           const y = Math.floor(Math.random() * arr.length);
-
           [nova_arr[x], nova_arr[y]] = [nova_arr[y], nova_arr[x]];
         }
-
         return nova_arr;
       }
 
       function selecionaNivel(nivel) {
-        console.log(nivel);
+        nivelSelecionado = nivel;
 
-        const musica_de_fundo = new Audio("assets/suspense-show-do-milhao.mp3");
+        musica_de_fundo = new Audio("assets/suspense-show-do-milhao.mp3");
         musica_de_fundo.loop = true;
-
         musica_de_fundo.play();
 
         menu.style.display = "none";
         grupo_btn.style.display = "flex";
 
-        console.log(grupo_btn.display);
+        // Resetar ajudas ao selecionar novo nível
+        ajudasUsadas = {
+          pular: false,
+          universitario: false,
+          eliminar: false,
+        };
+        botoesEliminados = [];
 
-        carrega_perguntas(nivel).then(() => atualizarPergunta());
+        // Reativar botões de ajuda
+        btnPular.disabled = false;
+        btnUniversitario.disabled = false;
+        btnEliminar.disabled = false;
+
+        // Resetar estilo dos botões
+        botoes.forEach((btn) => {
+          btn.classList.remove("disabled-option");
+        });
+
+        carrega_perguntas(nivel).then(() => {
+          index_pergunta = -1;
+          pontos = 0;
+          elemento_pontos.innerText = `Pontos: ${pontos}`;
+          atualizarPergunta();
+        });
       }
 
       function atualizarPergunta() {
@@ -256,7 +340,7 @@
 
         texto_pergunta.innerText = pergunta_atual.pergunta;
 
-        if (pergunta_atual.imagem) {
+        if (pergunta_atual.imagem && pergunta_atual.imagem !== "") {
           img_pergunta.style.display = "flex";
           img_pergunta.src = pergunta_atual.imagem;
         } else {
@@ -264,89 +348,224 @@
         }
 
         botao_a.firstElementChild.innerText = novas_opcoes[0];
-
         botao_b.firstElementChild.innerText = novas_opcoes[1];
-
         botao_c.firstElementChild.innerText = novas_opcoes[2];
-
         botao_d.firstElementChild.innerText = novas_opcoes[3];
+
+        botao_a.disabled = false;
+        botao_b.disabled = false;
+        botao_c.disabled = false;
+        botao_d.disabled = false;
+
+        // Restaurar botões eliminados (limpar estilo)
+        botoes.forEach((btn) => {
+          btn.classList.remove("disabled-option");
+        });
+        botoesEliminados = [];
+
+        // Se a ajuda de eliminação já foi usada, não faz nada agora
+        // A eliminação é aplicada na hora do clique, não persiste entre perguntas
       }
 
       function finalizarJogo() {
         pergunta.hidden = true;
-
-        botao_a.hidden = true;
-        botao_b.hidden = true;
-        botao_c.hidden = true;
-        botao_d.hidden = true;
-
-        botao_a.style.display = "none";
-        botao_b.style.display = "none";
-        botao_c.style.display = "none";
-        botao_d.style.display = "none";
-
+        botoes.forEach((btn) => {
+          btn.hidden = true;
+          btn.style.display = "none";
+        });
         grupo_btn.style.display = "none";
 
-        final.hidden = false;
+        // Esconder botões de ajuda também
+        const ajudasContainer = document.querySelector(".ajudas-container");
+        if (ajudasContainer) {
+          ajudasContainer.style.display = "none";
+        }
 
-        final.innerText = `Parabéns! Você fez ${pontos}/10 pontos`;
+        finalDiv.hidden = false;
+        finalMensagem.innerText = `PARABÉNS!\nVocê fez ${pontos}/10 pontos!`;
+
+        if (musica_de_fundo) {
+          musica_de_fundo.pause();
+        }
+      }
+
+      function resetarJogo() {
+        // Esconder tela final
+        finalDiv.hidden = true;
+
+        // Mostrar menu novamente
+        menu.style.display = "flex";
+
+        // Resetar elementos visuais
+        pergunta.hidden = false;
+        botoes.forEach((btn) => {
+          btn.hidden = false;
+          btn.style.display = "flex";
+          btn.classList.remove("disabled-option");
+        });
+
+        // Mostrar container de ajudas
+        const ajudasContainer = document.querySelector(".ajudas-container");
+        if (ajudasContainer) {
+          ajudasContainer.style.display = "flex";
+        }
+
+        // Resetar estado
+        lista_perguntas = [];
+        index_pergunta = -1;
+        pontos = 0;
+        elemento_pontos.innerText = `Pontos: ${pontos}`;
+        ajudasUsadas = {
+          pular: false,
+          universitario: false,
+          eliminar: false,
+        };
+        botoesEliminados = [];
+
+        btnPular.disabled = false;
+        btnUniversitario.disabled = false;
+        btnEliminar.disabled = false;
+
+        if (musica_de_fundo) {
+          musica_de_fundo.pause();
+          musica_de_fundo = null;
+        }
       }
 
       function mostrarAcerto() {
         acerto.style.display = "flex";
         acerto.style.opacity = 1;
-
         acerto.style.transform = "translate(-50%, -50%) scale(1)";
 
         setTimeout(() => {
           acerto.style.opacity = 0;
-
           acerto.style.transform = "translate(-50%, -50%) scale(0.5)";
-
           atualizarPergunta();
         }, 1000);
       }
 
       function mostrarErro() {
-        resposta_certa.innerText = `A resposta certa era 
-        ${pergunta_atual.opcoes[pergunta_atual.indice_correto]}`;
-
+        resposta_certa.innerText = `A resposta certa era ${
+          pergunta_atual.opcoes[pergunta_atual.indice_correto]
+        }`;
         erro.style.display = "flex";
         erro.style.opacity = 1;
-
         erro.style.transform = "translate(-50%, -50%) scale(1)";
 
         setTimeout(() => {
           erro.style.opacity = 0;
-
           erro.style.transform = "translate(-50%, -50%) scale(0.5)";
-
           atualizarPergunta();
         }, 2000);
       }
 
-      function onButtonClick(e) {
-        let resposta = e.target.innerText;
+      // =========================================================
+      // FUNÇÕES DAS AJUDAS
+      // =========================================================
 
-        console.log(
-          pergunta_atual.opcoes[pergunta_atual.indice_correto],
-          resposta
+      function usarPular() {
+        if (ajudasUsadas.pular) return;
+
+        ajudasUsadas.pular = true;
+        btnPular.disabled = true;
+
+        // Mostrar card com a resposta certa
+        respostaPular.innerText = `A resposta certa era: ${
+          pergunta_atual.opcoes[pergunta_atual.indice_correto]
+        }`;
+
+        cardPular.style.display = "flex";
+        cardPular.style.pointerEvents = "auto";
+        cardPular.style.opacity = 1;
+        cardPular.style.transform = "translate(-50%, -50%) scale(1)";
+
+        // Não atualiza pontuação
+        // O card fecha e chama atualizarPergunta
+      }
+
+      function usarUniversitario() {
+        if (ajudasUsadas.universitario) return;
+
+        ajudasUsadas.universitario = true;
+        btnUniversitario.disabled = true;
+
+        // Gerar uma dica sobre a resposta correta
+        const respostaCorreta =
+          pergunta_atual.opcoes[pergunta_atual.indice_correto];
+
+        cardUniversitario.style.display = "flex";
+        cardUniversitario.style.pointerEvents = "auto";
+        cardUniversitario.style.opacity = 1;
+        cardUniversitario.style.transform = "translate(-50%, -50%) scale(1)";
+      }
+
+      function usarEliminar() {
+        if (ajudasUsadas.eliminar) return;
+
+        // Encontrar as opções erradas (todas exceto a correta)
+        const respostaCorreta =
+          pergunta_atual.opcoes[pergunta_atual.indice_correto];
+        const opcoesErradas = pergunta_atual.opcoes.filter(
+          (op) => op !== respostaCorreta
         );
 
+        // Selecionar uma opção errada aleatória para eliminar
+        if (opcoesErradas.length > 0) {
+          const opcaoEliminar =
+            opcoesErradas[Math.floor(Math.random() * opcoesErradas.length)];
+
+          // Encontrar qual botão tem esse texto e desabilitar
+          botoes.forEach((btn) => {
+            if (
+              btn.firstElementChild.innerText.toUpperCase() ===
+              opcaoEliminar.toUpperCase()
+            ) {
+              btn.disabled = true;
+              botoesEliminados.push(btn);
+            }
+          });
+
+          ajudasUsadas.eliminar = true;
+          btnEliminar.disabled = true;
+
+          // Mostrar feedback visual rápido (opcional)
+          const feedback = document.createElement("div");
+          feedback.style.position = "fixed";
+          feedback.style.bottom = "20px";
+          feedback.style.right = "20px";
+          feedback.style.background = "#ffd700";
+          feedback.style.color = "#1a1a2e";
+          feedback.style.padding = "10px 20px";
+          feedback.style.borderRadius = "10px";
+          feedback.style.fontWeight = "bold";
+          feedback.style.zIndex = "999";
+          feedback.innerText = "❌ Uma alternativa errada foi eliminada!";
+          document.body.appendChild(feedback);
+
+          setTimeout(() => {
+            feedback.remove();
+          }, 2000);
+        }
+      }
+
+      function onButtonClick(e) {
+        // Verificar se o botão clicado está desabilitado (eliminado)
+        const botaoClicado = e.currentTarget;
+        if (botaoClicado.classList.contains("disabled-option")) {
+          return; // Botão eliminado, não pode clicar
+        }
+
+        let resposta = botaoClicado.firstElementChild.innerText;
         const resposta_correta =
           pergunta_atual.opcoes[pergunta_atual.indice_correto];
 
         if (resposta_correta.toLowerCase() === resposta.toLowerCase()) {
           pontos += 1;
-
           elemento_pontos.innerText = `Pontos: ${pontos}`;
-
           audio_certo.play();
-
           mostrarAcerto();
         } else {
           audio_errado.play();
-
           mostrarErro();
         }
       }
