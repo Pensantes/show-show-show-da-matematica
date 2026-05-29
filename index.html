@@ -203,9 +203,13 @@
 
       erro.style.opacity = 0;
       erro.style.transform = "translate(-50%, -50%) scale(0.5)";
+      erro.style.display = "none";
+      erro.style.pointerEvents = "none";
 
       acerto.style.opacity = 0;
       acerto.style.transform = "translate(-50%, -50%) scale(0.5)";
+      acerto.style.display = "none";
+      acerto.style.pointerEvents = "none";
 
       cardPular.style.opacity = 0;
       cardPular.style.transform = "translate(-50%, -50%) scale(0.5)";
@@ -434,6 +438,7 @@
 
       function mostrarAcerto() {
         acerto.style.display = "flex";
+        acerto.style.pointerEvents = "auto";
         acerto.style.opacity = 1;
         acerto.style.transform = "translate(-50%, -50%) scale(1)";
 
@@ -441,6 +446,10 @@
           acerto.style.opacity = 0;
           acerto.style.transform = "translate(-50%, -50%) scale(0.5)";
           atualizarPergunta();
+          setTimeout(() => {
+            acerto.style.display = "none";
+            acerto.style.pointerEvents = "none";
+          }, 300);
         }, 1000);
       }
 
@@ -449,6 +458,7 @@
           pergunta_atual.opcoes[pergunta_atual.indice_correto]
         }`;
         erro.style.display = "flex";
+        erro.style.pointerEvents = "auto";
         erro.style.opacity = 1;
         erro.style.transform = "translate(-50%, -50%) scale(1)";
 
@@ -456,6 +466,10 @@
           erro.style.opacity = 0;
           erro.style.transform = "translate(-50%, -50%) scale(0.5)";
           atualizarPergunta();
+          setTimeout(() => {
+            erro.style.display = "none";
+            erro.style.pointerEvents = "none";
+          }, 300);
         }, 2000);
       }
 

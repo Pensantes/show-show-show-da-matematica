@@ -535,6 +535,19 @@ button:disabled:hover {
     font-size: 0.95rem;
   }
 
+  button:hover {
+    transform: none;
+    background: #f00505;
+    background: linear-gradient(
+      14deg,
+      rgba(240, 5, 5, 1) 0%,
+      rgba(235, 107, 47, 1) 22%,
+      rgba(219, 35, 7, 1) 48%,
+      rgba(230, 107, 41, 1) 68%,
+      rgba(219, 11, 35, 1) 100%
+    );
+  }
+
   .alternativa::after {
     width: 34px;
     height: 34px;
